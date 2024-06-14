@@ -15,7 +15,6 @@ namespace CarConsoleSimulator.Services
         public Person Driver { get; set; }
         public string Status { get; set; }
         public int Fatigue { get; set; }
-        public int Hunger { get; set; }
         public int Fuel { get; set; }
         public Direction Direction { get; set; }
         public bool Move(string status);
@@ -23,6 +22,5 @@ namespace CarConsoleSimulator.Services
         public bool TurnRight();
         public void Refuel();
         public void Rest();
-
     }
 }

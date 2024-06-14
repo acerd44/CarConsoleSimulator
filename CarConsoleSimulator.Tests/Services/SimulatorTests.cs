@@ -1,5 +1,6 @@
 using CarConsoleSimulator.Models;
 using CarConsoleSimulator.Services;
+using Moq;
 
 namespace CarConsoleSimulator.Tests.Services
 {
