@@ -38,34 +38,39 @@ namespace CarConsoleSimulator
                 Console.WriteLine("6. Fuel car");
                 Console.WriteLine("7. Exit");
                 Console.Write("What would you like to do? ");
-                string? option = Console.ReadLine();
-                while (string.IsNullOrEmpty(option) || !(int.TryParse(option, out int optionInt) && optionInt >= 1 && optionInt <= 7))
+                var option = Console.ReadKey(true);
+                switch (option.Key)
                 {
-                    option = Console.ReadLine();
-                }
-                switch (option)
-                {
-                    case "1":
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
                         _simulator.TurnLeft();
                         break;
-                    case "2":
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
                         _simulator.TurnRight();
                         break;
-                    case "3":
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
                         _simulator.Move("Going forward");
                         break;
-                    case "4":
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
                         _simulator.Move("Backing up");
                         break;
-                    case "5":
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
                         _simulator.Rest();
                         break;
-                    case "6":
+                    case ConsoleKey.D6:
+                    case ConsoleKey.NumPad6:
                         _simulator.Refuel();
                         break;
-                    case "7":
+                    case ConsoleKey.D7:
+                    case ConsoleKey.NumPad7:
                         showMenu = false;
                         break;
+                    default:
+                        continue;
                 }
             }
         }
