@@ -15,6 +15,7 @@ namespace CarConsoleSimulator.Models
             builder.RegisterType<App>().AsSelf().SingleInstance();
             builder.RegisterType<Simulator>().As<ISimulator>().SingleInstance();
             builder.RegisterType<PersonService>().As<IPersonService>().SingleInstance();
+            builder.RegisterType<Menu>().AsSelf().SingleInstance();
         }
     }
 }
